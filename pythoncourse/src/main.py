@@ -13,7 +13,7 @@ import zipfile
 import utils as dw
 import os
 
-def main():
+def loadlistfromcsv():
     RESOURCE_URL = "http://repositorio.dados.gov.br/saude/unidades-saude/unidade-basica-saude/ubs.csv.zip"
 
     if os == "Windows":
@@ -57,5 +57,10 @@ def main():
 
     print(dw.extract_filename('cavalo.de.troia.ua'))
 
+
+
+def main():
+    loadlistfromcsv()
+    
 if __name__ == "__main__":
     main()
