@@ -45,11 +45,13 @@ def loadlistfromcsv():
     return dt
 
 def main():
-    list = loadlistfromcsv()
-    dicionario = dw.create_index_from(list, {"cod_munic":2, 'cod_cnes':3}, ('cod_munic', 'cod_cnes'))
+    list = loadlistfromcsv() 
+    Args = ['cod_munic', 'cod_cnes']
+    dicionario = dw.create_index_from(list, {"cod_munic":2, 'cod_cnes':3}, *Args) 
     
     for i in dicionario:
         print(i, dicionario[i])
+        
     
 if __name__ == "__main__":
     main()

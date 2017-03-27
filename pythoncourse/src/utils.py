@@ -50,10 +50,10 @@ def create_cidcnes_index(l):
         dicionario['' + t[2] + t[3]] = t
     return dicionario
 
-def create_index_from(source, columns_index, columns):
+def create_index_from(source, columns_index, col1, col2):
     dicionario = {}
     for t in source:
-        dicionario['' + t[columns_index[columns[0]]] + t[columns_index[columns[1]]]] = t
+        dicionario['' + t[columns_index[col1]] + t[columns_index[col2]]] = t
     return dicionario
 
     
