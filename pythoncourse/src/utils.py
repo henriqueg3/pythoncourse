@@ -29,12 +29,9 @@ def download(response, output):
             break
         output.write(data)
         print('Downloaded {bytes}'.format(bytes=total_downloaded))
-
+        
 def extract_filename(filename):
-    filename = filename.split('.')
-    del filename[len(filename) - 1]
-    string = "."
-    return string.join(filename)
+    return '.'.join(filename.split('.')[0:len(filename.split('.'))-1])
 
 def read_data(path):
     fdata = open(path, 'rt', encoding="utf8")
@@ -46,3 +43,9 @@ def read_data(path):
     return data
 
 
+def create_cidcnes_index(l):
+    
+    dicionario = {}
+    for t in l:
+        dicionario['' + t[2] + t[3]] = t
+    return dicionario
