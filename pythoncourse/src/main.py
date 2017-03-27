@@ -46,7 +46,7 @@ def loadlistfromcsv():
 
 def main():
     list = loadlistfromcsv()
-    dicionario = dw.create_cidcnes_index(list)
+    dicionario = dw.create_index_from(list, {"cod_munic":2, 'cod_cnes':3}, ('cod_munic', 'cod_cnes'))
     
     for i in dicionario:
         print(i, dicionario[i])
