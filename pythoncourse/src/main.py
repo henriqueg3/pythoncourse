@@ -46,8 +46,8 @@ def loadlistfromcsv():
 
 def main():
     list = loadlistfromcsv() 
-    Args = ['cod_munic', 'cod_cnes']
-    dicionario = dw.create_index_from(list, {"cod_munic":2, 'cod_cnes':3}, *Args) 
+    kargs = { "coluna1":input('Digite o nome da coluna 1 '), "coluna2":input('Digite o nome da coluna 2 ')}
+    dicionario = dw.create_index_from(list, {"cod_munic":2, 'cod_cnes':3}, **kargs) 
     
     for i in dicionario:
         print(i, dicionario[i])
